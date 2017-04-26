@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestMathJava">
+	<test name="BasicTest">
+		<classes>
+			<class name="com.globant.bootcampAutomation.testMathJava" />
+		</classes>
+	</test>
+
+</suite>
