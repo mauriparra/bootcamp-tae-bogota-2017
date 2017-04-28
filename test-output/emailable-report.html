@@ -31,28 +31,25 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">18,0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">14,7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">Default test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="1">globant.selenium.App</td><td><a href="#m1"><b>test2</b>  </a></td><td class="numi">1</td><td>1493339724684</td><td class="numi">12618</td></tr>
+<tr class="failedodd"><td rowspan="1">globant.selenium.NewTest</td><td><a href="#m1"><b>test2</b>  </a></td><td class="numi">1</td><td>1493407556000</td><td class="numi">2980</td></tr>
 <tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">globant.selenium.App</td><td><a href="#m2"><b>test1</b>  </a></td><td class="numi">1</td><td>1493339719385</td><td class="numi">5293</td></tr>
+<tr class="passedodd"><td rowspan="1">globant.selenium.NewTest</td><td><a href="#m2"><b>test1</b>  </a></td><td class="numi">1</td><td>1493407548716</td><td class="numi">3488</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">globant.selenium.App:test2</h2>
+<h2 id="m1">globant.selenium.NewTest:test2</h2>
 <div style="padding-left:3em">
-<p>Cannot locate option with value: 1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
-System info: host: &apos;DESKTOP-MT6KS9L&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: driver.version: unknown</p>
-org.openqa.selenium.support.ui.Select.selectByValue(Select.java:215)
-<br/>at globant.selenium.App.test2(App.java:57)
+<p>expected:&lt;...stZioAjxD5Sud5LuVnA/[formResponse]&gt; but was:&lt;...stZioAjxD5Sud5LuVnA/[viewform?c=0&amp;w=1]&gt;</p>
+org.junit.Assert.assertEquals(Assert.java:125)
+<br/>at org.junit.Assert.assertEquals(Assert.java:147)
+<br/>at globant.selenium.NewTest.test2(NewTest.java:68)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">globant.selenium.App:test1</h2>
+<h2 id="m2">globant.selenium.NewTest:test1</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

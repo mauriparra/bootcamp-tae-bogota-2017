@@ -2,32 +2,37 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17955" started-at="2017-04-28T00:35:19Z" finished-at="2017-04-28T00:35:37Z">
+  <suite name="Default suite" duration-ms="14717" started-at="2017-04-28T19:25:45Z" finished-at="2017-04-28T19:26:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17955" started-at="2017-04-28T00:35:19Z" finished-at="2017-04-28T00:35:37Z">
-      <class name="globant.selenium.App">
-        <test-method status="PASS" signature="test1()[pri:0, instance:globant.selenium.App@7823a2f9]" name="test1" duration-ms="5293" started-at="2017-04-27T19:35:19Z" finished-at="2017-04-27T19:35:24Z">
+    <test name="Default test" duration-ms="14717" started-at="2017-04-28T19:25:45Z" finished-at="2017-04-28T19:26:00Z">
+      <class name="globant.selenium.NewTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="beforeMethod" is-config="true" duration-ms="3282" started-at="2017-04-28T14:25:45Z" finished-at="2017-04-28T14:25:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="test1" duration-ms="3488" started-at="2017-04-28T14:25:48Z" finished-at="2017-04-28T14:25:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="FAIL" signature="test2()[pri:0, instance:globant.selenium.App@7823a2f9]" name="test2" duration-ms="12618" started-at="2017-04-27T19:35:24Z" finished-at="2017-04-27T19:35:37Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="afterMethod" is-config="true" duration-ms="1176" started-at="2017-04-28T14:25:52Z" finished-at="2017-04-28T14:25:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="beforeMethod" is-config="true" duration-ms="2618" started-at="2017-04-28T14:25:53Z" finished-at="2017-04-28T14:25:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="test2()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="test2" duration-ms="2980" started-at="2017-04-28T14:25:56Z" finished-at="2017-04-28T14:25:58Z">
+          <exception class="org.junit.ComparisonFailure">
             <message>
-              <![CDATA[Cannot locate option with value: 1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'DESKTOP-MT6KS9L', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: driver.version: unknown]]>
+              <![CDATA[expected:<...stZioAjxD5Sud5LuVnA/[formResponse]> but was:<...stZioAjxD5Sud5LuVnA/[viewform?c=0&w=1]>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with value: 1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'DESKTOP-MT6KS9L', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:215)
-	at globant.selenium.App.test2(App.java:57)
+              <![CDATA[org.junit.ComparisonFailure: expected:<...stZioAjxD5Sud5LuVnA/[formResponse]> but was:<...stZioAjxD5Sud5LuVnA/[viewform?c=0&w=1]>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at globant.selenium.NewTest.test2(NewTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -54,11 +59,15 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-      </class> <!-- globant.selenium.App -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:globant.selenium.NewTest@46d56d67]" name="afterMethod" is-config="true" duration-ms="1148" started-at="2017-04-28T14:25:58Z" finished-at="2017-04-28T14:26:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- globant.selenium.NewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
