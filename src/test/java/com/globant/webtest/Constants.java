@@ -10,6 +10,6 @@ package com.globant.webtest;
  * @author admin
  */
 public final class Constants {
-    public static final String URL = "https://www.decameron.com/0";
+    public static final String URL = "https://www.decameron.com/";
     public static final int TIMEOUT = 10;
 }

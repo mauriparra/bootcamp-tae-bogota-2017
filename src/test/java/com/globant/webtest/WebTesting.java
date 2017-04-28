@@ -9,18 +9,18 @@ import static com.globant.webtest.Constants.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
  *
  * @author admin
  */
-@Test
 public class WebTesting {
     
     private WebDriver driver;
@@ -31,28 +31,30 @@ public class WebTesting {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    public void goToMainPage() {
+    @Test
+    public void goToMakeTest() {
+        driver.findElement(By.id("navBooking")).click();
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
+        WebElement inputName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("origenCompAereo")));
+        inputName.sendKeys("Bogota.COLOMBIA");
+        //WebElement hotelSelector = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id=hotelWrapperHotel1]>button")));
+        //hotelSelector.click();
+        //driver.findElement(By.cssSelector("div[id=hotelWrapperHotel1]>button")).click();
+        driver.findElement(By.id("entradaCompAereo1")).sendKeys("Mar, 16 May 2017");
+        driver.findElement(By.id("salidaCompAereo1")).sendKeys("Mar, 18 May 2017");
+        Select selectAdults = new Select(driver.findElement(By.id("selectAereoHab1Adultos")));
+        selectAdults.selectByValue("2");
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("buscarAereo")));
+        submitButton.click();
+    }
+
+    @BeforeMethod(description = "Opens the Web Browser")
+    public void setUpMethod() throws Exception {
+        driver = new ChromeDriver();
         driver.get(URL);
     }
-    
-    public void fillInput(){
-        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("origenCompAereo")));
-        element.sendKeys("Bogota.COLOMBIA");
-        //driver.findElement(By.id("origenCompAereo")).sendKeys("Bogota.COLOMBIA");
-        /*driver.findElement(By.id("hotelWrapperHotel1")).findElement(By.tagName("button")).click();*/
-        /*WebElement dinamicElement = (new WebDriverWait(driver,10))
-                .until(ExpectedExceptions.presenceOfElementLocated(By.id("origenCompAereo")));*/
-        /*WebDriverWait wait = new WebDriverWait(driver,10);
-        WebElement element = wait.until(ExpectedException.)*/
-    }
 
-    @BeforeClass(description = "Opens the Web Browser")
-    public void setUpMethod() throws Exception {
-        driver = new FirefoxDriver();
-    }
-
-    @AfterClass(description = "Closes the Web Browser")
+    @AfterMethod(description = "Closes the Web Browser")
     public void tearDownMethod() throws Exception {
         driver.quit();
     }
