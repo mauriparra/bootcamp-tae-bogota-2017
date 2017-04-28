@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.globant.bootcampAutomation.NewTest">
+      <class name="globant.selenium.App">
         <methods>
-          <include name="PruebaMultiplicarEscenario3"/>
+          <include name="test2"/>
         </methods>
-      </class> <!-- com.globant.bootcampAutomation.NewTest -->
+      </class> <!-- globant.selenium.App -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
