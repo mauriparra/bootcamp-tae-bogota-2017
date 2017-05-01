@@ -1,4 +1,4 @@
-package com.globant.bootcampAutomation;
+package com.jenniffer.TestBootcamp;
 
 /**
  * Hello world!
