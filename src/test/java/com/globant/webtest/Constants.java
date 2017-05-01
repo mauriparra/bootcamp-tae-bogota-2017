@@ -10,9 +10,10 @@ package com.globant.webtest;
  * @author admin
  */
 public final class Constants {
+    
+    public static final int TIMEOUT = 10;
     //public static final String URL = "https://www.decameron.com/es/co-inicio";
     /*public static final String URL = "http://agencias.decameron.com/promosite/index.php/es/agencias-colombia";
-    public static final int TIMEOUT = 10;
     public static final String AGENCY = "A001";
     public static final String CITY_VALUE = "Bogota|3537|BOG|CO";
     public static final String HOTEL_VALUE = "3552|CARTAGENA (RAFAEL NUNEZ)|42|COLOMBIA|8670|Cartagena, Bolivar - Decameron Cartagena||CTG";

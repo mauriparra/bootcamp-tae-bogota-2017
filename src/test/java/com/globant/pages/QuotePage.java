@@ -5,10 +5,20 @@
  */
 package com.globant.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
 /**
  *
  * @author admin
  */
 public class QuotePage {
+
+    @FindBy(css="select[class*='sbox-rooms-select']")
+    private WebElement roomSelector;
     
+    public void selectAResult(){
+        (new Select(roomSelector)).selectByValue("3");
+    }
 }

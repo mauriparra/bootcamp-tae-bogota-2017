@@ -6,14 +6,20 @@
 package com.globant.pages;
 
 import static com.globant.webtest.Constants.*;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
  * @author admin
  */
 public class HomePage {
+    
+    WebDriver driver;
     
     @FindBy(css="input[class*='sbox-destination']")
     private WebElement destinationInput;
@@ -24,16 +30,17 @@ public class HomePage {
     @FindBy(css="span[class*='eva-icon-close-circled']")
     private WebElement buttonClosePopUp;
     
-    public HomePage(){
-        //PageFactory.initElements(driver, this);
+    public HomePage(WebDriver driver){
+        this.driver = driver;
     }
     
-    public void fillBookingEngine(){
+    public QuotePage fillBookingEngine(){
         
-        //WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);        
         destinationInput.sendKeys(DESTINATION_NAME);
         buttonClosePopUp.click();
+        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(buttonSearch));        
         buttonSearch.click();
+        return PageFactory.initElements(this.driver, QuotePage.class);
         //driver.findElement(By.id("sigAge")).sendKeys(AGENCY);
         /*driver.findElement(By.cssSelector("#divCiud>input")).sendKeys("Bogota.COLOMBIA");
         String scriptText = "document.querySelector('#CIUDAD_ORIGEN').setAttribute('value','" + CITY_VALUE + "')";

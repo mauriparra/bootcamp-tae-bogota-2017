@@ -6,6 +6,7 @@
 package com.globant.webtest;
 
 import com.globant.pages.HomePage;
+import com.globant.pages.QuotePage;
 import static com.globant.webtest.Constants.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,24 +23,22 @@ public class WebTesting {
     
     private WebDriver driver;
     
-    public WebTesting() {
-    }
-
     @BeforeMethod(description = "All actions before testing")
     public void setUpMethod() throws Exception {
         driver = new ChromeDriver();
         driver.get(URL);
-    }
-
-    @AfterMethod(description = "All actions after testing")
-    public void tearDownMethod() throws Exception {
-       // driver.quit();
     }
     
     @Test(description = "Starts all the web test")
     public void goToMakeTest() {
        
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-        homePage.fillBookingEngine();
+        QuotePage quotePage = homePage.fillBookingEngine();
+        quotePage.selectAResult();
+    }
+    
+    @AfterMethod(description = "All actions after testing")
+    public void tearDownMethod() throws Exception {
+       // driver.quit();
     }
 }
