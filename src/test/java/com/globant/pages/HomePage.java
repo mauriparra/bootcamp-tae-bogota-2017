@@ -5,12 +5,19 @@
  */
 package com.globant.pages;
 
+import com.globant.common.DatePicker;
 import static com.globant.webtest.Constants.*;
+import java.util.Arrays;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -19,55 +26,61 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class HomePage {
     
-    WebDriver driver;
+    private WebSite website;
     
-    @FindBy(css="input[class*='sbox-destination']")
-    private WebElement destinationInput;
+    @FindBy(how = How.ID, using = "sigAge")
+    private WebElement agencyCodeInput;
     
-    @FindBy(css="a[class*='sbox-search']")
-    private WebElement buttonSearch;
+    @FindBy(css="#divCiud>input")
+    private WebElement cityNameInput;
     
-    @FindBy(css="span[class*='eva-icon-close-circled']")
-    private WebElement buttonClosePopUp;
+    @FindBy(how = How.ID, using = "hotel")
+    private WebElement hotelNameInput;
     
+    @FindBy(how = How.ID, using = "hab1adultos")
+    private WebElement adultsRoomSelect;
+    
+    @FindBy(how = How.NAME, using = "FECHA_LLEGADA")
+    private WebElement startDate;
+    
+    @FindBy(how = How.NAME, using = "FECHA_SALIDA")
+    private WebElement endDate;
+    
+    @FindBy(css="div[id=ui-datepicker-div]")
+    private WebElement calendarDiv;
+    
+    @FindBy(how = How.CLASS_NAME, using = "botonNaranjaFlecha")
+    private WebElement submitButton;
+
     public HomePage(WebDriver driver){
-        this.driver = driver;
+        website = new WebSite(driver);
     }
-    
+  
     public QuotePage fillBookingEngine(){
-        
-        destinationInput.sendKeys(DESTINATION_NAME);
-        buttonClosePopUp.click();
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(buttonSearch));        
-        buttonSearch.click();
-        return PageFactory.initElements(this.driver, QuotePage.class);
-        //driver.findElement(By.id("sigAge")).sendKeys(AGENCY);
-        /*driver.findElement(By.cssSelector("#divCiud>input")).sendKeys("Bogota.COLOMBIA");
+               
+        agencyCodeInput.sendKeys(AGENCY_CODE);
+        cityNameInput.sendKeys(CITY_NAME);
         String scriptText = "document.querySelector('#CIUDAD_ORIGEN').setAttribute('value','" + CITY_VALUE + "')";
-        ((JavascriptExecutor)driver).executeScript(scriptText);
-        (new Select(driver.findElement(By.id("hotel")))).selectByValue(HOTEL_VALUE);
-        (new Select(driver.findElement(By.id("hab1adultos")))).selectByValue("3");
+        ((JavascriptExecutor)website.getDriver()).executeScript(scriptText);
         
-        String[][] calendarData = new String[][]{
-            {"FECHA_LLEGADA", START_DATE},
-            {"FECHA_SALIDA", END_DATE}
-        };
-                
-        for(String[] date: calendarData){
-            driver.findElement(By.name(date[0])).click();
-            WebElement calendar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ui-datepicker-div")));
-            List<WebElement> calendarColums = calendar.findElements(By.tagName("td"));
+        (new Select(hotelNameInput)).selectByValue(HOTEL_VALUE);
+
+        List<DatePicker> datePickers = Arrays.asList(new DatePicker(startDate, START_DATE), new DatePicker(endDate, END_DATE));
+        
+        for(DatePicker datePk: datePickers){
+            datePk.getElement().click();
+            new WebDriverWait(website.getDriver(), TIMEOUT).until(ExpectedConditions.visibilityOf(calendarDiv));
+            List<WebElement> calendarColums = calendarDiv.findElements(By.tagName("td"));
             for (WebElement cell: calendarColums){
-                if (cell.getText().equals(date[1])){
+                if (cell.getText().equals(datePk.getValue())){
                     cell.findElement(By.tagName("a")).click();
                     break;
                 }
             }
         }
-
-        driver.findElement(By.className("botonNaranjaFlecha")).click();
-        WebElement loaderSpinner = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SpanLabelDivLoad")));
-        wait.until(ExpectedConditions.invisibilityOf(loaderSpinner));
-        Assert.assertEquals(RESULTS_TITLE, driver.getTitle());*/
+        
+        (new Select(adultsRoomSelect)).selectByValue(ADULT_NUMBER);
+        submitButton.click();
+        return PageFactory.initElements(website.getDriver(), QuotePage.class);
     }
 }

@@ -30,7 +30,7 @@ public class WebTesting {
     }
     
     @Test(description = "Starts all the web test")
-    public void goToMakeTest() {
+    public void liquidationTest() {
        
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         QuotePage quotePage = homePage.fillBookingEngine();
@@ -39,6 +39,6 @@ public class WebTesting {
     
     @AfterMethod(description = "All actions after testing")
     public void tearDownMethod() throws Exception {
-       // driver.quit();
+        driver.quit();
     }
 }
