@@ -5,15 +5,16 @@ package com.globant.pages;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.globant.common.DatePicker;
 
-import java.util.Arrays;
-import java.util.List;
+import com.globant.common.DatePicker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *

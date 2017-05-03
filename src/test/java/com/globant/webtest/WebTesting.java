@@ -5,6 +5,7 @@
  */
 package com.globant.webtest;
 
+
 import com.globant.pages.HomePage;
 import com.globant.pages.QuotePage;
 import org.openqa.selenium.WebDriver;

@@ -5,13 +5,13 @@
  */
 package com.globant.pages;
 
-import java.util.List;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import java.util.List;
 
 /**
  *
@@ -19,36 +19,40 @@ import org.openqa.selenium.support.How;
  */
 public class QuotePage extends WebSite{
 
+    @FindBy(how = How.ID, using = "blockrandom")
+    private WebElement iframeResult;
+
     @FindBy(how = How.ID, using = "user_login")
     private WebElement userLoginInput;
     
-    @FindBy(css = "#frmAgencias > #ENVIAR")
+    @FindBy(css = "#ENVIAR.botonNaranja")
     private WebElement logingButton;
-    
-    @FindBy(css=".classDivAgencias")
-    private WebElement divResults;
-    
+
     public QuotePage(WebDriver driver) {
         super(driver);
     }
     
     public void loginAgent(String userId){
+        getDriver().switchTo().frame(iframeResult);
         userLoginInput.sendKeys(userId);
         logingButton.click();
     }
     
     public void selectAHotel(String resultsTitle){
-        System.out.println("Begining selection");
-        List<WebElement> hotelButtons = divResults.findElements(By.cssSelector(".classAgencias > input"));
+
+        List<WebElement> hotelButtons = getDriver().findElements(By.className("classAgencias"));
         Boolean firstHotel = true;
         
         for(WebElement button: hotelButtons){
             if(firstHotel){
-                button.click();
+                By butonBook = By.cssSelector("#ENVIAR.botonNaranja");
+                waitElement(butonBook);
+                button.findElement(butonBook).click();
                 firstHotel = false;
                 break;
             }
         }
-    
+        getDriver().switchTo().defaultContent();
+        waitElement("SpanLabelDivLoad2");
     }
 }

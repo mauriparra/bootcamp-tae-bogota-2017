@@ -6,7 +6,6 @@
 package com.globant.pages;
 
 import com.globant.common.DatePicker;
-import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,13 +15,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 /**
  *
  * @author fabian.acero
  */
 public class WebSite {
     private WebDriver driver;
-    
+    private int timeOut;
+
     @FindBy(css="div[id=ui-datepicker-div]")
     private WebElement calendarDiv;
 
@@ -31,7 +33,12 @@ public class WebSite {
     }
     
     public WebDriver getDriver() {
+        this.timeOut = 10;
         return driver;
+    }
+
+    public int getTimeOut() {
+        return this.timeOut;
     }
     /**
      * Gets the current page's title
@@ -66,7 +73,7 @@ public class WebSite {
     }
     /**
      * Triggers js code for set a value for an element
-     * @param selectElement
+     * @param cssSelector
      * @param value 
      */
     public void setJavaScriptElementValue(String cssSelector, String value){
@@ -78,15 +85,23 @@ public class WebSite {
      * @param elementId 
      */
     public void waitElement(String elementId){
-        WebElement elementToWaitFor = new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(By.id(elementId)));
-        new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.invisibilityOf(elementToWaitFor));
+        WebElement elementToWaitFor = new WebDriverWait(getDriver(), getTimeOut()).until(ExpectedConditions.presenceOfElementLocated(By.id(elementId)));
+        new WebDriverWait(getDriver(), getTimeOut()).until(ExpectedConditions.invisibilityOf(elementToWaitFor));
     }
-    
+    /**
+     * Waits until an indicated element exists
+     * @param element
+     */
+    public void waitElement(By element){
+        WebElement elementToWaitFor = new WebDriverWait(getDriver(), getTimeOut()).until(ExpectedConditions.presenceOfElementLocated(element));
+        new WebDriverWait(getDriver(), getTimeOut()).until(ExpectedConditions.invisibilityOf(elementToWaitFor));
+    }
+
     public void selectBookingDatePickers(List<DatePicker> datePickers){
         
         for(DatePicker datePk: datePickers){
             datePk.getElement().click();
-            new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.visibilityOf(calendarDiv));
+            new WebDriverWait(getDriver(), getTimeOut()).until(ExpectedConditions.visibilityOf(calendarDiv));
             List<WebElement> calendarColums = calendarDiv.findElements(By.tagName("td"));
             for (WebElement cell: calendarColums){
                 if (cell.getText().equals(datePk.getValue())){

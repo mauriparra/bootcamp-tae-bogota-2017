@@ -10,7 +10,7 @@
         <parameter name="agency_code" value="A001" />
         <parameter name="city_name" value="Bogota.COLOMBIA" />
         <parameter name="city_value" value="Bogota|3537|BOG|CO" />
-        <parameter name="hotel_value" value="3552|CARTAGENA (RAFAEL NUNEZ)|42|COLOMBIA|8670|Cartagena, Bolivar - Decameron" />
+        <parameter name="hotel_value" value="3552|CARTAGENA (RAFAEL NUNEZ)|42|COLOMBIA|8670|Cartagena, Bolivar - Decameron Cartagena||CTG" />
         <parameter name="adult_number" value="2" />
         <parameter name="start_date" value="16" />
         <parameter name="end_date" value="18" />
