@@ -21,4 +21,21 @@
         </classes>
 
     </test>
+
+    <test name="TestB">
+
+        <parameter name="agency_code" value="A001" />
+        <parameter name="city_name" value="Medellin.COLOMBIA" />
+        <parameter name="city_value" value="Medellin|3565|MDE|CO " />
+        <parameter name="hotel_value" value="3775|SAN ANDRES ISLAND|42|COLOMBIA|8691|Isla de San Andrés - Decameron Los Delfines||ADZ" />
+        <parameter name="adult_number" value="3" />
+        <parameter name="start_date" value="20" />
+        <parameter name="end_date" value="23" />
+        <parameter name="user_id" value="524881532" />
+
+        <classes>
+            <class name="com.globant.webtest.WebTesting"></class>
+        </classes>
+
+    </test>
 </suite>
