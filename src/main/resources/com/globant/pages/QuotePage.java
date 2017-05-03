@@ -5,7 +5,6 @@
  */
 package com.globant.pages;
 
-import static com.globant.webtest.Constants.*;
 import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -33,12 +32,12 @@ public class QuotePage extends WebSite{
         super(driver);
     }
     
-    public void loginAgent(){
-        userLoginInput.sendKeys(USER_ID);
+    public void loginAgent(String userId){
+        userLoginInput.sendKeys(userId);
         logingButton.click();
     }
     
-    public void selectAHotel(){
+    public void selectAHotel(String resultsTitle){
         System.out.println("Begining selection");
         List<WebElement> hotelButtons = divResults.findElements(By.cssSelector(".classAgencias > input"));
         Boolean firstHotel = true;
@@ -51,6 +50,6 @@ public class QuotePage extends WebSite{
             }
         }
         
-        Assert.assertEquals(RESULTS_TITLE, getDriver().getTitle());
+        Assert.assertEquals(resultsTitle, getDriver().getTitle());
     }
 }

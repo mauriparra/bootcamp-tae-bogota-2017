@@ -1,22 +1,19 @@
+package com.globant.pages;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.globant.pages;
-
 import com.globant.common.DatePicker;
-import static com.globant.webtest.Constants.*;
+
 import java.util.Arrays;
 import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -49,18 +46,19 @@ public class HomePage extends WebSite{
         super(driver);
     }
   
-    public QuotePage fillBookingEngine(){
+    public QuotePage fillBookingEngine(String agencyCode, String cityName, String cityValue,
+                                       String hotelValue, String strStartDate, String strEndDate, String adultNumber){
                
-        agencyCodeInput.sendKeys(AGENCY_CODE);
-        cityNameInput.sendKeys(CITY_NAME);
+        agencyCodeInput.sendKeys(agencyCode);
+        cityNameInput.sendKeys(cityName);
         
-        setJavaScriptElementValue(CITY_SELECTOR, CITY_VALUE);
-        setSelectorValue(hotelNameInput, HOTEL_VALUE);
+        setJavaScriptElementValue("#CIUDAD_ORIGEN", cityValue);
+        setSelectorValue(hotelNameInput, hotelValue);
 
-        List<DatePicker> datePickers = Arrays.asList(new DatePicker(startDate, START_DATE), new DatePicker(endDate, END_DATE));
+        List<DatePicker> datePickers = Arrays.asList(new DatePicker(startDate, strStartDate), new DatePicker(endDate, strEndDate));
         selectBookingDatePickers(datePickers);
         
-        setSelectorValue(adultsRoomSelect, ADULT_NUMBER);
+        setSelectorValue(adultsRoomSelect, adultNumber);
         submitButton.click();
         waitElement("SpanLabelDivLoad");
         return PageFactory.initElements(getDriver(), QuotePage.class);
