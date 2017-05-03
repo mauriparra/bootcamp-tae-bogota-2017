@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuiteA">
+
+    <parameter name="url" value="http://agencias.decameron.com/promosite/index.php/es/agencias-colombia" />
+    <parameter name="results_title" value="Booking Agencias CO" />
+
+    <test name="TestA">
+
+        <parameter name="agency_code" value="A001" />
+        <parameter name="city_name" value="Bogota.COLOMBIA" />
+        <parameter name="city_value" value="Bogota|3537|BOG|CO" />
+        <parameter name="hotel_value" value="3552|CARTAGENA (RAFAEL NUNEZ)|42|COLOMBIA|8670|Cartagena, Bolivar - Decameron" />
+        <parameter name="adult_number" value="2" />
+        <parameter name="start_date" value="16" />
+        <parameter name="end_date" value="18" />
+        <parameter name="user_id" value="524881532" />
+
+        <classes>
+            <class name="com.globant.webtest.WebTesting"></class>
+        </classes>
+
+    </test>
+</suite>

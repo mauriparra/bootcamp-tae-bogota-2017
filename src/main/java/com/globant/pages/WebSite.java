@@ -6,7 +6,6 @@
 package com.globant.pages;
 
 import com.globant.common.DatePicker;
-import static com.globant.webtest.Constants.*;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

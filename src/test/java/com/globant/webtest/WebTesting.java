@@ -7,13 +7,12 @@ package com.globant.webtest;
 
 import com.globant.pages.HomePage;
 import com.globant.pages.QuotePage;
-import static com.globant.webtest.Constants.*;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
@@ -25,19 +24,22 @@ public class WebTesting {
     private WebDriver driver;
     
     @BeforeMethod(description = "All actions before testing")
-    public void setUpMethod() throws Exception {
+    @Parameters({"url"})
+    public void setUpMethod(String url) throws Exception {
         driver = new ChromeDriver();
-        driver.get(URL);
+        driver.get(url);
     }
     
     @Test(description = "Starts all the web test")
-    public void liquidationTest() {
-       
+    @Parameters({"agency_code", "results_title", "city_name","city_value","hotel_value","adult_number","start_date","end_date","user_id"})
+    public void liquidationTest(String agencyCode, String resultsTitle, String cityName, String cityValue,
+                                String hotelValue, String adultNumber, String startDate,
+                                String endDate, String userId) {
+
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-        QuotePage quotePage = homePage.fillBookingEngine();
-        quotePage.loginAgent();
-        quotePage.selectAHotel();
-        Assert.assertEquals(RESULTS_TITLE, homePage.getCurrentTitle());
+        QuotePage quotePage = homePage.fillBookingEngine(agencyCode,cityName,cityValue,hotelValue,startDate,endDate,adultNumber);
+        quotePage.loginAgent(userId);
+        quotePage.selectAHotel(resultsTitle);
     }
     
     @AfterMethod(description = "All actions after testing")
