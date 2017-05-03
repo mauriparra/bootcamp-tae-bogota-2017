@@ -1,4 +1,4 @@
-package com.globant.bootcampAutomation.Utility;
+package com.globant.bootcampAutomation.utility;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by MauricioLeonardo on 5/1/2017.
  */
-public class BrowserFactory {
+public abstract class browserFactory {
 
     static WebDriver driver;
 

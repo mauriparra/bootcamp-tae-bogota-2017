@@ -1,5 +1,6 @@
-package com.globant.bootcampAutomation.Pages;
+package com.globant.bootcampAutomation.pages;
 
+import com.globant.bootcampAutomation.basePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,14 +11,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by MauricioLeonardo on 5/1/2017.
  */
-public class AmazonLogInPage {
+public class amazonLogInPage extends basePage {
 
-    WebDriver driver;
+    //Extending the basePage abstract super class to get public variables and methods
 
-    public AmazonLogInPage(WebDriver driver) {
-
-        this.driver = driver;
-    }
+    //Using the constructor to overload the driver to be used in each page object
+    public amazonLogInPage (WebDriver driver) {super(driver);}
 
     @FindBy(id = "ap_email")
     WebElement userName;
@@ -38,11 +37,9 @@ public class AmazonLogInPage {
 
         userName.sendKeys(uID);
         userPassword.sendKeys(uPass);
-
         if (remember) {
             rememberUserCheckBox.click();
         }
-
         signInButton.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
