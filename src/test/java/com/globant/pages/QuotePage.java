@@ -6,48 +6,51 @@
 package com.globant.pages;
 
 import static com.globant.webtest.Constants.*;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
+import java.util.List;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 /**
  *
  * @author admin
  */
-public class QuotePage {
+public class QuotePage extends WebSite{
 
-    WebSite website;
-    /*@FindBy(how = How.ID, using = "SpanLabelDivLoad")
-    private WebElement loaderSpinner;*/
-
+    @FindBy(how = How.ID, using = "user_login")
+    private WebElement userLoginInput;
+    
+    @FindBy(css = "#frmAgencias > #ENVIAR")
+    private WebElement logingButton;
+    
+    @FindBy(css=".classDivAgencias")
+    private WebElement divResults;
+    
     public QuotePage(WebDriver driver) {
-        website = new WebSite(driver);
+        super(driver);
     }
     
-    public void selectAResult(){
+    public void loginAgent(){
+        userLoginInput.sendKeys(USER_ID);
+        logingButton.click();
+    }
+    
+    public void selectAHotel(){
+        System.out.println("Begining selection");
+        List<WebElement> hotelButtons = divResults.findElements(By.cssSelector(".classAgencias > input"));
+        Boolean firstHotel = true;
         
-        /*new FluentWait<WebElement>(loaderSpinner).
-                withTimeout(10, TimeUnit.SECONDS).
-                pollingEvery(100, TimeUnit.MILLISECONDS).
-                until(new Function<WebElement, Boolean>(){
-                    @Override
-                    public Boolean apply(WebElement element){
-                        return element.isDisplayed();
-                    }
-                });
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(loaderSpinner));
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.invisibilityOf(loaderSpinner));*/
-        WebElement loaderSpinner = new WebDriverWait(website.getDriver(), TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(By.id("SpanLabelDivLoad")));
-        new WebDriverWait(website.getDriver(), TIMEOUT).until(ExpectedConditions.invisibilityOf(loaderSpinner));
-        Assert.assertEquals(RESULTS_TITLE, website.getDriver().getTitle());
-        System.out.println("OK!");
+        for(WebElement button: hotelButtons){
+            if(firstHotel){
+                button.click();
+                firstHotel = false;
+                break;
+            }
+        }
+        
+        Assert.assertEquals(RESULTS_TITLE, getDriver().getTitle());
     }
 }

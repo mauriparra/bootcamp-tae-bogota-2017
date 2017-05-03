@@ -34,7 +34,8 @@ public class WebTesting {
        
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         QuotePage quotePage = homePage.fillBookingEngine();
-        quotePage.selectAResult();
+        quotePage.loginAgent();
+        quotePage.selectAHotel();
     }
     
     @AfterMethod(description = "All actions after testing")

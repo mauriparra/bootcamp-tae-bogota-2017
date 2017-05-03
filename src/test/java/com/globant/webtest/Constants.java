@@ -17,9 +17,11 @@ public final class Constants {
     public static final String AGENCY_CODE = "A001";
     public static final String CITY_NAME = "Bogota.COLOMBIA";
     public static final String CITY_VALUE = "Bogota|3537|BOG|CO";
+    public static final String CITY_SELECTOR = "#CIUDAD_ORIGEN";
     public static final String HOTEL_VALUE = "3552|CARTAGENA (RAFAEL NUNEZ)|42|COLOMBIA|8670|Cartagena, Bolivar - Decameron Cartagena||CTG";
-    public static final String ADULT_NUMBER = "3";
-    public static final String START_DATE = "15";
+    public static final String ADULT_NUMBER = "2";
+    public static final String START_DATE = "16";
     public static final String END_DATE = "18";
     public static final String RESULTS_TITLE = "Booking Agencias CO";
+    public static final String USER_ID = "524881532";
 }
