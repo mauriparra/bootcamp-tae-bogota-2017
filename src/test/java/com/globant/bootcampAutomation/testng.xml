@@ -1,10 +1,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
+<!--
 <suite name="TestMathJava">
+
 	<test name="BasicTest">
 		<classes>
 			<class name="com.globant.bootcampAutomation.testMathJava" />
 		</classes>
 	</test>
+	-->
 
+<suite name="TestAlkomprar">
+
+    <test name="BasicTest">
+        <classes>
+            <class name="com.globant.bootcampAutomation.com.globant.bootcampAutomation.test.suiteWebpageTest" />
+        </classes>
+    </test>
+	<parameter name="firstname" value="Test8"></parameter>
+    <parameter name="lastname" value="Tester8"></parameter>
+    <parameter name="email" value="test8@tester.com"></parameter>
+    <parameter name="password" value="bootcamp2017$"></parameter>
+    <parameter name="region" value="908"></parameter>
+    <parameter name="city" value="11001"></parameter>
 </suite>
