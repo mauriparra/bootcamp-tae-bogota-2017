@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+	<test name="Testing Parameterization">
+	<parameter name="date" value="18021987"/>
+	<parameter name="text" value="test words words"/>
+		<classes>
+			<class name="globant.selenium.NewTest" />
+		</classes>
+	</test>
+</suite>

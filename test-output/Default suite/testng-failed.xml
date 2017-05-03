@@ -5,9 +5,7 @@
     <classes>
       <class name="globant.selenium.NewTest">
         <methods>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-          <include name="test2"/>
+          <include name="test1"/>
         </methods>
       </class> <!-- globant.selenium.NewTest -->
     </classes>
