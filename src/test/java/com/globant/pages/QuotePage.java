@@ -50,7 +50,6 @@ public class QuotePage extends WebSite{
                 break;
             }
         }
-        
-        Assert.assertEquals(RESULTS_TITLE, getDriver().getTitle());
+    
     }
 }

@@ -35,6 +35,29 @@ public class WebSite {
         return driver;
     }
     /**
+     * Gets the current page's title
+     * @return 
+     */
+    public String getCurrentTitle(){
+        return driver.getTitle();
+    }
+    
+    /**
+     * Gets the current page's url
+     * @return 
+     */
+    public String getCurrentURL(){
+        return driver.getCurrentUrl();
+    } 
+    /**
+     * Sets a value to an input element
+     * @param inputElement
+     * @param value 
+     */
+    public void setInputValue(WebElement inputElement, String value){
+        inputElement.sendKeys(value);
+    }
+    /**
      * Selects an indicated select element value
      * @param selectElement
      * @param value 

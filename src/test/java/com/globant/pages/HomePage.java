@@ -50,19 +50,20 @@ public class HomePage extends WebSite{
     }
   
     public QuotePage fillBookingEngine(){
-               
-        agencyCodeInput.sendKeys(AGENCY_CODE);
-        cityNameInput.sendKeys(CITY_NAME);
+        
+        setInputValue(agencyCodeInput, AGENCY_CODE);
+        setInputValue(cityNameInput, CITY_NAME);
         
         setJavaScriptElementValue(CITY_SELECTOR, CITY_VALUE);
         setSelectorValue(hotelNameInput, HOTEL_VALUE);
-
+        
         List<DatePicker> datePickers = Arrays.asList(new DatePicker(startDate, START_DATE), new DatePicker(endDate, END_DATE));
         selectBookingDatePickers(datePickers);
         
         setSelectorValue(adultsRoomSelect, ADULT_NUMBER);
         submitButton.click();
         waitElement("SpanLabelDivLoad");
+        
         return PageFactory.initElements(getDriver(), QuotePage.class);
     }
 }

@@ -8,6 +8,7 @@ package com.globant.webtest;
 import com.globant.pages.HomePage;
 import com.globant.pages.QuotePage;
 import static com.globant.webtest.Constants.*;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -36,6 +37,7 @@ public class WebTesting {
         QuotePage quotePage = homePage.fillBookingEngine();
         quotePage.loginAgent();
         quotePage.selectAHotel();
+        Assert.assertEquals(RESULTS_TITLE, homePage.getCurrentTitle());
     }
     
     @AfterMethod(description = "All actions after testing")
