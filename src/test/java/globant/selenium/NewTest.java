@@ -2,9 +2,9 @@ package globant.selenium;
 
 import org.testng.annotations.Test;
 
-import globant.Pages.PagePoll;
-import globant.Pages.PageResult;
-import globant.Pages.Setup;
+import globant.pages.PagePoll;
+import globant.pages.PageResult;
+import globant.pages.Setup;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -27,32 +27,28 @@ public class NewTest {
   public void beforeMethod() {
 	   driver = Setup.startBrowser("chrome", "https://goo.gl/forms/X5JYTIizWgt5Pg2v1");
 	    }
-  @Parameters({"date","text"})
+  @Parameters({"date","text","civil_status","work"})
   @Test
-  public void test1(String date, String text) {
+  public void test1(String date, String text,String civil_status, String work) {
 	  PagePoll testPagePoll=PageFactory.initElements(driver, PagePoll.class);
 	  testPagePoll.writeCalendar(date);
-	  testPagePoll.writeDropdown();
-	  testPagePoll.writeDropdownSelector1();
-	  testPagePoll.writeRadioButton2();
+	  testPagePoll.writeDropdown(civil_status);
+	  testPagePoll.writeRadioButton(work);
 	  testPagePoll.writeInputText(text);
 	  PageResult testPage2=testPagePoll.doSend();
       Assert.assertEquals("https://docs.google.com/forms/d/e/1FAIpQLSdccTDCqi87lZM7vQ3uLm46h7mkv_4stZioAjxD5Sud5LuVnA/formResponse", testPage2.url());
 		
   }
-//  @Test
-//  public void test2() {
-//	  PagePoll testPagePoll=PageFactory.initElements(driver, PagePoll.class);
-//	  testPagePoll.writeCalendar("18021987");
-//	  testPagePoll.writeDropdown();
-//	  testPagePoll.writeDropdownSelector2();
-//	  testPagePoll.writeRadioButton1();
-//	  testPagePoll.writeInputText("encuenta sencilla");
-//	  PageResult testPage2=testPagePoll.doSend();
-//	  testPage2.showAnswer();
-//      Assert.assertEquals("https://docs.google.com/forms/d/e/1FAIpQLSdccTDCqi87lZM7vQ3uLm46h7mkv_4stZioAjxD5Sud5LuVnA/viewanalytics", testPage2.url());
-//		
-//  }
+  @Test
+  public void test2(String date, String text,String civil_status, String work) {
+	  PagePoll testPagePoll=PageFactory.initElements(driver, PagePoll.class);
+	  testPagePoll.writeCalendar(date);
+	  testPagePoll.writeDropdown(civil_status);
+	 // testPagePoll.writeRadioButton(work);
+	  testPagePoll.writeInputText(text);
+	  PageResult testPage2=testPagePoll.doSend();
+      Assert.assertEquals("https://docs.google.com/forms/d/e/1FAIpQLSdccTDCqi87lZM7vQ3uLm46h7mkv_4stZioAjxD5Sud5LuVnA/viewanalytics", testPage2.url());	
+  }
   
 
   

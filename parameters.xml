@@ -3,6 +3,8 @@
 	<test name="Testing Parameterization">
 	<parameter name="date" value="18021987"/>
 	<parameter name="text" value="test words words"/>
+	<parameter name="civil_status" value="married"/>
+	<parameter name="work" value="employed"/>
 		<classes>
 			<class name="globant.selenium.NewTest" />
 		</classes>

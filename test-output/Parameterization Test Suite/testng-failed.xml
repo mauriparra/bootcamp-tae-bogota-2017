@@ -2,16 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Parameterization Test Suite]">
   <parameter name="date" value="18021987"/>
+  <parameter name="civil_status" value="married"/>
+  <parameter name="work" value="employed"/>
   <parameter name="text" value="test words words"/>
   <test name="Testing Parameterization(failed)">
     <parameter name="date" value="18021987"/>
+    <parameter name="civil_status" value="married"/>
+    <parameter name="work" value="employed"/>
     <parameter name="text" value="test words words"/>
     <classes>
       <class name="globant.selenium.NewTest">
         <methods>
           <include name="afterMethod"/>
-          <include name="test1" invocation-numbers="0"/>
           <include name="beforeMethod"/>
+          <include name="test2"/>
         </methods>
       </class> <!-- globant.selenium.NewTest -->
     </classes>

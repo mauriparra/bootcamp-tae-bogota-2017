@@ -1,4 +1,4 @@
-package globant.Pages;
+package globant.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,20 +16,21 @@ public class PagePoll {
 
 	}
 
+
 	@FindBy(how = How.XPATH, using = "//INPUT[@type='date']/self::INPUT")
 	WebElement calendar;
 	@FindBy(how = How.XPATH, using = "//DIV[@class='quantumWizMenuPaperselectOption freebirdThemedSelectOptionDarkerDisabled exportOption isSelected isPlaceholder']")
 	WebElement dropdown;
-	@FindBy(how = How.XPATH, using = "(//CONTENT[@class='quantumWizMenuPaperselectContent'][text()='Casad@'][text()='Casad@'])[1]")
-	WebElement dropdownSelector1;
+	@FindBy(how = How.XPATH, using = "(//CONTENT[@class='quantumWizMenuPaperselectContent'][text()='Solter@'][text()='Solter@'])[2]")
+	WebElement dropdownSelectorSingle;
 	@FindBy(how = How.XPATH, using = "(//CONTENT[@class='quantumWizMenuPaperselectContent'][text()='Casad@'][text()='Casad@'])[2]")
-	WebElement dropdownSelector2;
-	@FindBy(how = How.XPATH, using = "(//CONTENT[@class='quantumWizMenuPaperselectContent'][text()='Casad@'][text()='Casad@'])[3]")
-	WebElement dropdownSelector3;
+	WebElement dropdownSelectorMarried;
+	@FindBy(how = How.XPATH, using = "(//CONTENT[@class='quantumWizMenuPaperselectContent'][text()='Viud@'][text()='Viud@'])[2]")
+	WebElement dropdownSelectorWidower;
 	@FindBy(how = How.XPATH, using = "(//DIV[@class='exportLabelWrapper'])[1]")
-	WebElement radioButton1;
+	WebElement radioButtonYesEmployed;
 	@FindBy(how = How.XPATH, using = "(//DIV[@class='exportLabelWrapper'])[2]")
-	WebElement radioButton2;
+	WebElement radioButtonNoEmployed;
 	@FindBy(how = How.XPATH, using = "//INPUT[@type='text']")
 	WebElement inputText;
 	@FindBy(how = How.XPATH, using = "//SPAN[@class='quantumWizButtonPaperbuttonLabel exportLabel'][text()='Enviar']")
@@ -40,30 +41,35 @@ public class PagePoll {
 		calendar.click();
 	}
 
-	public void writeDropdown() {
-		dropdown.click();
+	public void writeDropdown(String select) {
+		
+		if (select.equals("single")){
+			dropdown.click();
+			dropdownSelectorSingle.click();
+			dropdownSelectorSingle.click();
+			
+		}else if(select.equals("married")){
+			dropdown.click();
+			dropdownSelectorMarried.click();
+			dropdownSelectorMarried.click();
+			
+		}else if(select.equals("windower")){
+			dropdown.click();
+			dropdownSelectorWidower.click();
+			dropdownSelectorWidower.click();			
+		}else{
+			System.out.println("wrong");
+		}
 	}
 
-	public void writeDropdownSelector1() {
-		dropdownSelector1.click();
-		dropdownSelector1.click();
+	public void writeRadioButton(String select) {
+		if(select.equals("employed")){
+			radioButtonYesEmployed.click();
+		}else if(select.equals("unemployed")){
+			radioButtonNoEmployed.click();
+		}
+		
 	}
-	public void writeDropdownSelector2() {
-		dropdownSelector2.click();
-		dropdownSelector2.click();
-	}
-	public void writeDropdownSelector3() {
-		dropdownSelector3.click();
-		dropdownSelector2.click();
-	}
-
-	public void writeRadioButton1() {
-		radioButton1.click();
-	}
-	public void writeRadioButton2() {
-		radioButton2.click();
-	}
-
 	public void writeInputText(String text) {
 		inputText.click();
 		inputText.sendKeys(text);
