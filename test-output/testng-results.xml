@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="15307" started-at="2017-05-07T06:04:16Z" finished-at="2017-05-07T06:04:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="15307" started-at="2017-05-07T06:04:16Z" finished-at="2017-05-07T06:04:31Z">
+      <class name="com.globant.test.AmericanAirlinesTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.globant.test.AmericanAirlinesTest@3e6fa38a]" name="setUp" is-config="true" duration-ms="9054" started-at="2017-05-07T01:04:16Z" finished-at="2017-05-07T01:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="fillBooking(java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.globant.test.AmericanAirlinesTest@3e6fa38a]" name="fillBooking" duration-ms="6166" started-at="2017-05-07T01:04:25Z" description="Fills the booking engine" finished-at="2017-05-07T01:04:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BOG]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MIA]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[20-05-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[22-05-2017]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillBooking -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.globant.test.AmericanAirlinesTest@3e6fa38a]" name="tearDown" is-config="true" duration-ms="1" started-at="2017-05-07T01:04:31Z" finished-at="2017-05-07T01:04:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.globant.test.AmericanAirlinesTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="TestA(failed)">
+    <parameter name="passengers-number" value="3"/>
+    <parameter name="iata-departure" value="BOG"/>
+    <parameter name="iata-arrival" value="MIA"/>
+    <parameter name="departure-date" value="01-07-2017"/>
+    <parameter name="arrival-date" value="04-07-2017"/>
+    <parameter name="oneway-fly" value="false"/>
+    <classes>
+      <class name="com.globant.test.AmericanAirlinesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="fillBooking" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.globant.test.AmericanAirlinesTest -->
+    </classes>
+  </test> <!-- TestA(failed) -->
+</suite> <!-- Failed suite [Suite] -->
