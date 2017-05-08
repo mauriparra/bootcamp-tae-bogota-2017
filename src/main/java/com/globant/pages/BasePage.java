@@ -8,7 +8,6 @@ package com.globant.pages;
 import com.globant.util.DatePicker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,7 +24,7 @@ import java.util.List;
 public class BasePage {
     WebDriver driver;
     static int TIMEOUT = 60;
-    static String CSS_LOADER_IMAGE = "aa-busy-img";
+    static String CSS_LOADER_IMAGE = "aa-busy-module";
     
     @FindBy(css="div[id=ui-datepicker-div]")
     private WebElement calendarDiv;
@@ -97,7 +96,7 @@ public class BasePage {
      * @param element
      */
     public void waitElement(By element){
-        WebElement elementToWaitFor = new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(element));
+        WebElement elementToWaitFor = new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
         new WebDriverWait(getDriver(), TIMEOUT).until(ExpectedConditions.invisibilityOf(elementToWaitFor));
     }
     
@@ -137,7 +136,6 @@ public class BasePage {
     	String selectedDateTitle = datePk.getMonthName();
     	Boolean titleIsEquals = false;
     	for(WebElement dateTitle: datePickersTitles){
-    		//System.out.println(selectedDateTitle + " != " + dateTitle.getText());
     		if(selectedDateTitle.equals(dateTitle.getText())){
     			titleIsEquals = true;
     			break;
@@ -159,7 +157,8 @@ public class BasePage {
      * @param searchResult
      */
 	public void fillAutocompleteInput(WebElement input, String value, WebElement searchResult){
-		input.sendKeys(Keys.chord(Keys.CONTROL, "a"), value);
+		input.clear();
+		input.sendKeys(value);
         WebElement autocompleteResult = new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(searchResult));
         autocompleteResult.findElement(By.cssSelector("li")).click();
 	}

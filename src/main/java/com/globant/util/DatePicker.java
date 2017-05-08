@@ -1,5 +1,9 @@
 package com.globant.util;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,18 +21,40 @@ import org.openqa.selenium.WebElement;
  */
 public class DatePicker {
     
+	private static String DEFAULT_FORMAT="dd-MM-yyyy";
     private WebElement element;
     private String value;
     private int year;
     private int month;
     private int day;
+    private Date date;
 
-    public DatePicker(WebElement element, String value) {
+	public DatePicker(WebElement element, String value) {
         this.element = element;
         this.value = value;
         setDateValues();
+        setDate();
     }
 
+    public Date getDate() {
+		return date;
+	}
+    
+    /**
+     * Creates the date object from string value
+     * @param date
+     */
+	public void setDate() {
+
+		DateFormat dateFormat = new SimpleDateFormat(DEFAULT_FORMAT);
+		
+		try {
+			date = dateFormat.parse(value);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	
     public WebElement getElement() {
         return element;
     }

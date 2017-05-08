@@ -3,17 +3,30 @@
 <suite name="Suite" parallel="false">
   
   <test name="TestA">
-  	<parameter name="oneway-fly" value="false" />
+  	<parameter name="oneway-fly" value="true" />
   	<parameter name="iata-departure" value="BOG" />
   	<parameter name="iata-arrival" value="MIA" />
   	<parameter name="passengers-number" value="2" />
-  	<parameter name="departure-date" value="20-05-2017" />
-  	<parameter name="arrival-date" value="22-05-2017" />
+  	<parameter name="departure-date" value="22-05-2017" />
+  	<parameter name="arrival-date" value="24-05-2017" />
     
     <classes>
       <class name="com.globant.test.AmericanAirlinesTest"/>
     </classes>
     
-  </test> <!-- Test -->
+  </test>
   
-</suite> <!-- Suite -->
+  <!--<test name="TestB">
+  	<parameter name="oneway-fly" value="false" />
+  	<parameter name="iata-departure" value="BOG" />
+  	<parameter name="iata-arrival" value="LAX" />
+  	<parameter name="passengers-number" value="2" />
+  	<parameter name="departure-date" value="20-07-2017" />
+  	<parameter name="arrival-date" value="24-07-2017" />
+    
+    <classes>
+      <class name="com.globant.test.AmericanAirlinesTest"/>
+    </classes>
+  </test>-->
+  
+</suite>

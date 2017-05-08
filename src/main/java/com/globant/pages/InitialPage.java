@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.globant.util.DatePicker;
 
@@ -23,6 +25,19 @@ import com.globant.util.DatePicker;
  */
 public class InitialPage extends BasePage{
     
+	private List<DatePicker> datePickerList;
+	private static String CSS_SINGLE_TRIP = "label[for='flightSearchForm.tripType.oneWay']";
+	private Boolean isOneWayFly;
+
+	@FindBy(css="div[aria-describedby='cookieConsentDialog'")
+	WebElement cookieContenDialog;
+	
+	@FindBy(how = How.ID, using = "cookieConsentPolicyLink")
+	WebElement linkCookiesPolicy;
+	
+	@FindBy(how = How.ID, using = "cookieConsentPolicy")
+	WebElement contentCookiesPolicy;
+	
 	@FindBy(how = How.ID, using = "cookieConsentAccept")
 	WebElement acceptCookiesButton;
 	
@@ -58,26 +73,52 @@ public class InitialPage extends BasePage{
 		super(driver);
 	}
 	
-	public ResultPage fillBooking(Boolean isOneWayFly, String iataDeparture, String iataArrival,
-    		String passengersNumber, String departureDate, String arrivalDate){
+	public Boolean getIsOneWayFly() {
+		return isOneWayFly;
+	}
+
+	public ResultPage fillBooking(String iataDeparture, String iataArrival,String passengersNumber){
 		
+		linkCookiesPolicy.click();
+		new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(contentCookiesPolicy));
 		acceptCookiesButton.click();
-		driver.findElement(By.id("aa-booking-module")).click();
+		new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.invisibilityOf(cookieContenDialog));
 		
 		if(isOneWayFly){
-			radioFlyTypeGroup.findElement(By.cssSelector("label[for='flightSearchForm.tripType.oneWay']")).click();
+			radioFlyTypeGroup.findElement(By.cssSelector(CSS_SINGLE_TRIP)).click();
 		}
 		
 		fillAutocompleteInput(departureInput, iataDeparture, departureResult);
 		fillAutocompleteInput(arrivalInput, iataArrival, arrivalResult);
 		setSelectorValue(passengersSelect, passengersNumber);
-		
-		List<DatePicker> datePickers = Arrays.asList(new DatePicker(departureDatePicker, departureDate), new DatePicker(arrivalDatePicker, arrivalDate));
-		selectDatePickers(datePickers);
+		selectDatePickers(datePickerList);
 		submitBookingButton.click();
-		//waitElement(By.className(CSS_LOADER_IMAGE));
+		waitElement(By.className(CSS_LOADER_IMAGE));
 		
 		return PageFactory.initElements(driver, ResultPage.class);
+	}
+	
+	/**
+	 * Sets the datepicker list values
+	 * @param departureDate
+	 * @param arrivalDate
+	 */
+	public void setInitialParams(Boolean isOneWayFly, String departureDate, String arrivalDate){
+		
+		this.isOneWayFly = isOneWayFly;
+		datePickerList = Arrays.asList(new DatePicker(departureDatePicker, departureDate));
+
+		if(!isOneWayFly){
+			datePickerList.add(new DatePicker(arrivalDatePicker, arrivalDate));
+		}
+	}
+
+	/**
+	 * Returns the datepicker list
+	 * @return
+	 */
+	public List<DatePicker> getDatePickerList() {
+		return datePickerList;
 	}
 	
 }
