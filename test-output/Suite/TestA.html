@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun May 07 22:51:42 COT 2017</td>
+<td>Started on:</td><td>Mon May 08 17:59:47 COT 2017</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10254 ms)</td>
+<tr><td>Total time:</td><td>100 seconds (100958 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,30 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.globant.test.AmericanAirlinesTest.fillBooking()'><b>fillBooking</b><br>Test class: com.globant.test.AmericanAirlinesTest<br>Test method: Fills the booking engine<br>Parameters: true, BOG, MIA, 2, 22-05-2017, 24-05-2017</td>
-<td><div><pre>java.lang.ArrayIndexOutOfBoundsException: 1
-	at java.util.Arrays$ArrayList.get(Arrays.java:3841)
-	at com.globant.test.AmericanAirlinesTest.validateDates(AmericanAirlinesTest.java:66)
-	at com.globant.test.AmericanAirlinesTest.fillBooking(AmericanAirlinesTest.java:50)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace443934570", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace443934570'><pre>java.lang.ArrayIndexOutOfBoundsException: 1
-	at java.util.Arrays$ArrayList.get(Arrays.java:3841)
-	at com.globant.test.AmericanAirlinesTest.validateDates(AmericanAirlinesTest.java:66)
-	at com.globant.test.AmericanAirlinesTest.fillBooking(AmericanAirlinesTest.java:50)
+<td title='com.globant.test.AmericanAirlinesTest.fillBooking()'><b>fillBooking</b><br>Test class: com.globant.test.AmericanAirlinesTest<br>Test method: Fills the booking engine<br>Parameters: false, BOG, LAX, 2, 22-05-2017, 25-05-2017</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on LINUX (05bd85dbbb341924a1d3144a23a07a9d)] -&gt; class name: aa-busy-module] (tried for 60 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;localhost.localdomain&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.9.9-100.fc24.x86_64&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461571 (8a88bbe0775e2a23afda0ceaf2ef7ee74e822cc5), userDataDir=/tmp/.org.chromium.Chromium.uNcGAu}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=56.0.2924.87, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 05bd85dbbb341924a1d3144a23a07a9d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at com.globant.pages.BasePage.waitElement(BasePage.java:100)
+	at com.globant.pages.InitialPage.fillBooking(InitialPage.java:96)
+	at com.globant.test.AmericanAirlinesTest.fillBooking(AmericanAirlinesTest.java:48)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace127356954", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace127356954'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on LINUX (05bd85dbbb341924a1d3144a23a07a9d)] -&gt; class name: aa-busy-module] (tried for 60 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;localhost.localdomain&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.9.9-100.fc24.x86_64&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461571 (8a88bbe0775e2a23afda0ceaf2ef7ee74e822cc5), userDataDir=/tmp/.org.chromium.Chromium.uNcGAu}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=56.0.2924.87, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 05bd85dbbb341924a1d3144a23a07a9d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at com.globant.pages.BasePage.waitElement(BasePage.java:100)
+	at com.globant.pages.InitialPage.fillBooking(InitialPage.java:96)
+	at com.globant.test.AmericanAirlinesTest.fillBooking(AmericanAirlinesTest.java:48)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,8 +125,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 </pre></div></td>
-<td>0</td>
-<td>com.globant.test.AmericanAirlinesTest@3e6fa38a</td></tr>
+<td>72</td>
+<td>com.globant.test.AmericanAirlinesTest@2f7c2f4f</td></tr>
 </table><p>
 </body>
 </html>

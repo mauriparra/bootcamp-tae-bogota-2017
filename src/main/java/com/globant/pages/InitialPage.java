@@ -106,10 +106,11 @@ public class InitialPage extends BasePage{
 	public void setInitialParams(Boolean isOneWayFly, String departureDate, String arrivalDate){
 		
 		this.isOneWayFly = isOneWayFly;
-		datePickerList = Arrays.asList(new DatePicker(departureDatePicker, departureDate));
 
-		if(!isOneWayFly){
-			datePickerList.add(new DatePicker(arrivalDatePicker, arrivalDate));
+		if(isOneWayFly){
+			datePickerList = Arrays.asList(new DatePicker(departureDatePicker, departureDate));
+		}else{
+			datePickerList = Arrays.asList(new DatePicker(departureDatePicker, departureDate), new DatePicker(arrivalDatePicker, arrivalDate));
 		}
 	}
 
