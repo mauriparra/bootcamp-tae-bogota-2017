@@ -2,9 +2,9 @@ package globant.selenium;
 
 import org.testng.annotations.Test;
 
-import globant.pages.PagePoll;
-import globant.pages.PageResult;
-import globant.pages.Setup;
+import globant.Pages.PagePoll;
+import globant.Pages.PageResult;
+import globant.Pages.Setup;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;

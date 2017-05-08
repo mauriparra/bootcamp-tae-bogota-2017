@@ -1,12 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Parameterization Test Suite">
-	<test name="Testing Parameterization">
-	<parameter name="date" value="18021987"/>
-	<parameter name="text" value="test words words"/>
-	<parameter name="civil_status" value="married"/>
-	<parameter name="work" value="employed"/>
+<suite name="Test Suite Page Qatar">
+	<test name="Testing search flight oneWay">
+	<parameter name="airportStart" value="NYC"/>
+	<parameter name="airportDestination" value="AKL"/>
+	<parameter name="dateDeparting" value="20-06-2017"/>
+	<parameter name="dateReturning" value="20-11-2017"/>
+	<parameter name="numberAdults" value="02"/>
+	<parameter name="numberChilds" value="01"/>
+	<parameter name="numberInfants" value="01"/>
+	<parameter name="premiumClass" value="no"/>
+	<parameter name="promoCode" value=""/>
 		<classes>
-			<class name="globant.selenium.NewTest" />
+			<class name="org.qatar.automation.TestQatar" />
 		</classes>
+		
 	</test>
 </suite>

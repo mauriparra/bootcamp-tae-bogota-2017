@@ -1,4 +1,4 @@
-package globant.Pages;
+package org.qatar.pages;
 
 import java.util.concurrent.TimeUnit;
 

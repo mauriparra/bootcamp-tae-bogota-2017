@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="globant.selenium.NewTest">
+      <class name="qatar.tests.TestQatar">
         <methods>
-          <include name="test2"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="fillFlightReturn"/>
         </methods>
-      </class> <!-- globant.selenium.NewTest -->
+      </class> <!-- qatar.tests.TestQatar -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
