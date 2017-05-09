@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.globant.test.AmericanAirlinesTest" hash-for-method="fillBooking(false, BOG, LAX, 2, 22-05-2017, 25-05-2017)">fillBooking(false, BOG, LAX, 2, 22-05-2017, 25-05-2017)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.globant.test.AmericanAirlinesTest" hash-for-method="fillBooking(false, BOG, LAX, 2, 08-03-2018, 10-03-2018)">fillBooking(false, BOG, LAX, 2, 08-03-2018, 10-03-2018)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -125,22 +125,38 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="fillBooking(false, BOG, LAX, 2, 22-05-2017, 25-05-2017)">
-                  </a> <!-- fillBooking(false, BOG, LAX, 2, 22-05-2017, 25-05-2017) -->
+                  <a name="fillBooking(false, BOG, LAX, 2, 08-03-2018, 10-03-2018)">
+                  </a> <!-- fillBooking(false, BOG, LAX, 2, 08-03-2018, 10-03-2018) -->
                   <span class="method-name">fillBooking</span>
-                  <span class="parameters">(false, BOG, LAX, 2, 22-05-2017, 25-05-2017)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on LINUX (05bd85dbbb341924a1d3144a23a07a9d)] -&gt; class name: aa-busy-module] (tried for 60 second(s) with 500 MILLISECONDS interval)
+                  <span class="parameters">(false, BOG, LAX, 2, 08-03-2018, 10-03-2018)</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=56.0.2924.87)
+  (Driver info: chromedriver=2.29.461571 (8a88bbe0775e2a23afda0ceaf2ef7ee74e822cc5),platform=Linux 4.9.9-100.fc24.x86_64 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 14 milliseconds
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;localhost.localdomain&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.9.9-100.fc24.x86_64&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461571 (8a88bbe0775e2a23afda0ceaf2ef7ee74e822cc5), userDataDir=/tmp/.org.chromium.Chromium.uNcGAu}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=56.0.2924.87, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 05bd85dbbb341924a1d3144a23a07a9d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at com.globant.pages.BasePage.waitElement(BasePage.java:100)
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461571 (8a88bbe0775e2a23afda0ceaf2ef7ee74e822cc5), userDataDir=/tmp/.org.chromium.Chromium.Cb12IS}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=56.0.2924.87, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 4eb76e4f962d94b8e0921dabb91692ef
+*** Element info: {Using=class name, value=aa-busy-module}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:437)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByClassName(RemoteWebDriver.java:497)
+	at org.openqa.selenium.By$ByClassName.findElements(By.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:398)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at com.globant.pages.BasePage.waitElement(BasePage.java:102)
 	at com.globant.pages.InitialPage.fillBooking(InitialPage.java:96)
 	at com.globant.test.AmericanAirlinesTest.fillBooking(AmericanAirlinesTest.java:48)
-... Removed 25 stack frames
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Fills the booking engine)                  </em>
@@ -162,8 +178,8 @@ Session ID: 05bd85dbbb341924a1d3144a23a07a9d
     &lt;parameter name=&quot;passengers-number&quot; value=&quot;2&quot;/&gt;
     &lt;parameter name=&quot;iata-departure&quot; value=&quot;BOG&quot;/&gt;
     &lt;parameter name=&quot;iata-arrival&quot; value=&quot;LAX&quot;/&gt;
-    &lt;parameter name=&quot;departure-date&quot; value=&quot;22-05-2017&quot;/&gt;
-    &lt;parameter name=&quot;arrival-date&quot; value=&quot;25-05-2017&quot;/&gt;
+    &lt;parameter name=&quot;departure-date&quot; value=&quot;08-03-2018&quot;/&gt;
+    &lt;parameter name=&quot;arrival-date&quot; value=&quot;10-03-2018&quot;/&gt;
     &lt;parameter name=&quot;oneway-fly&quot; value=&quot;false&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.globant.test.AmericanAirlinesTest&quot;/&gt;
@@ -210,12 +226,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'fillBooking')
 data.setCell(0, 2, 'com.globant.test.AmericanAirlinesTest')
-data.setCell(0, 3, 72667);
+data.setCell(0, 3, 14698);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -249,12 +265,14 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">fillBooking(false, BOG, LAX, 2, 22-05-2017, 25-05-2017)</span>
-                <span class="method-start">28057 ms</span>
+                <span class="method-name">fillBooking(false, BOG, LAX, 2, 08-03-2018, 10-03-2018)</span>
+                <span class="method-start">19967 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">100761 ms</span>
+                <span class="method-start">34686 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

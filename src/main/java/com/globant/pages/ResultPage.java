@@ -41,5 +41,6 @@ public class ResultPage extends BasePage{
 		}
 		
 		Assert.assertFalse(departureResults.isDisplayed(), MSG_ERR_RESULT);
+		Assert.assertFalse(resultTitle.isDisplayed(), MSG_ERR_RESULT);
 	}
 }

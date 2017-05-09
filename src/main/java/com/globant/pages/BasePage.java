@@ -15,6 +15,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.testng.Assert;
+
 import java.util.List;
 
 /**
@@ -25,6 +27,7 @@ public class BasePage {
     WebDriver driver;
     static int TIMEOUT = 60;
     static String CSS_LOADER_IMAGE = "aa-busy-module";
+    static String MSG_CALENDAR_NO_AVAILABLE = "Calendar limit. Month '$1' isn't avalable on this datepicker";
     
     @FindBy(css="div[id=ui-datepicker-div]")
     private WebElement calendarDiv;
@@ -131,7 +134,8 @@ public class BasePage {
         if(calendarTable.size() > 0){            	
         	return calendarTable;
         }
-        
+
+        //Assert.assertNull(buttonNextCalendar.getSize(), MSG_CALENDAR_NO_AVAILABLE.replace("$1", datePk.getMonthName()));
     	buttonNextCalendar.click();
     	String selectedDateTitle = datePk.getMonthName();
     	Boolean titleIsEquals = false;
