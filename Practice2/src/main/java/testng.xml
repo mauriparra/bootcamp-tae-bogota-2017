@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Alqueria">
+
+	<test name="RegisterForm">
+		<classes>
+			<class name="com.globant.bootcampAutomation.practice2.RegisterTest" />
+		</classes>
+		<parameter name="name" value="Milena" />
+		<parameter name="lastName" value="perez" />
+		<parameter name="mail" value="mym@correo.com" />
+		<parameter name="date" value="28/12/1987" />
+		<parameter name="terms" value="No acepto" />
+		<parameter name="gender" value="Femenino" />
+		<parameter name="city" value="Bogotá" />
+	</test>
+</suite>

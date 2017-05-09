@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestAlqueria]">
+  <test name="RegisterForm(failed)">
+    <parameter name="date" value="28/07/1990"/>
+    <parameter name="lastName" value="Morales"/>
+    <parameter name="mail" value="mym@minion.com"/>
+    <parameter name="gender" value="Masculino"/>
+    <parameter name="terms" value="No acepto"/>
+    <parameter name="city" value="Bogotá"/>
+    <parameter name="name" value="Milena"/>
+    <classes>
+      <class name="com.globant.bootcampAutomation.practice2.RegisterTest">
+        <methods>
+          <include name="validateRegisterLink" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.globant.bootcampAutomation.practice2.RegisterTest -->
+    </classes>
+  </test> <!-- RegisterForm(failed) -->
+</suite> <!-- Failed suite [TestAlqueria] -->
