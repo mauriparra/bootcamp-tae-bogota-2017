@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="globant.NeiderBarbosa.test.LoginTest">
+      <class name="globant.NeiderBarbosa.Ana.test.FlightReservationTest">
         <methods>
+          <include name="bookingTest"/>
           <include name="setup"/>
-          <include name="TestLogin"/>
         </methods>
-      </class> <!-- globant.NeiderBarbosa.test.LoginTest -->
+      </class> <!-- globant.NeiderBarbosa.Ana.test.FlightReservationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [NeiderBarbosa by packages]">
-  <test name="globant.NeiderBarbosa(failed)">
+  <test name="globant.NeiderBarbosa.Ana.test(failed)">
     <classes>
-      <class name="globant.NeiderBarbosa.TestSimit">
+      <class name="globant.NeiderBarbosa.Ana.test.FlightReservationTest">
         <methods>
-          <include name="testDocument"/>
-          <include name="TestQuery"/>
-          <include name="TestLinkFederacion"/>
-          <include name="TestQueryPdf"/>
-          <include name="Connet"/>
+          <include name="close"/>
+          <include name="setup"/>
+          <include name="originDestinyTest"/>
         </methods>
-      </class> <!-- globant.NeiderBarbosa.TestSimit -->
+      </class> <!-- globant.NeiderBarbosa.Ana.test.FlightReservationTest -->
     </classes>
-  </test> <!-- globant.NeiderBarbosa(failed) -->
+  </test> <!-- globant.NeiderBarbosa.Ana.test(failed) -->
 </suite> <!-- Failed suite [NeiderBarbosa by packages] -->

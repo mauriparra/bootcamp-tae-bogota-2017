@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="true">
+  	<parameter name="cityOrigin" value="tok"/> 
+  	<parameter name="cityDestiny" value="was"/>
+  	<parameter name="dateInicial" value="09-05-2017"/>
+  	<parameter name="dateEnd" value="09-10-2017"/>
+  	<parameter name="adults" value="4"/>
+  	<parameter name="young" value="2"/>
+  	<parameter name="childs" value="2"/>
+  	<parameter name="infants" value="1"/>
+  	<parameter name="cityOriginExpect" value="1"/> 
+  	<parameter name="cityDestinyExpect" value="1"/>
+  	<parameter name="dateInicialExpect" value="1"/>
+  	<parameter name="dateEndExpect" value="1"/>
+  	<parameter name="adultsExpect" value="1"/>
+  	<parameter name="youngExpect" value="1"/>
+  	<parameter name="childsExpect" value="1"/>
+  	<parameter name="infantsExpect" value="1"/>
+      <classes>
+      <class name="globant.NeiderBarbosa.Ana.test.FlightReservationTest">
+        <methods>
+          <include name="origin"/>
+        </methods>
+      </class> <!-- globant.NeiderBarbosa.Ana.test.FlightReservationTest -->
+    </classes>
+  </test> <!-- Test -->
+  <test name="false">
+  	<parameter name="cityOrigin" value="tok"/> 
+  	<parameter name="cityDestiny" value="was"/>
+  	<parameter name="dateInicial" value="09-04-2017"/>
+  	<parameter name="dateEnd" value="09-10-2017"/>
+  	<parameter name="adults" value="10"/>
+  	<parameter name="young" value="2"/>
+  	<parameter name="childs" value="2"/>
+  	<parameter name="infants" value="1"/>
+  	<parameter name="cityOriginExpect" value="1"/> 
+  	<parameter name="cityDestinyExpect" value="1"/>
+  	<parameter name="dateInicialExpect" value="1"/>
+  	<parameter name="dateEndExpect" value="2"/>
+  	<parameter name="adultsExpect" value="2"/>
+  	<parameter name="youngExpect" value="1"/>
+  	<parameter name="childsExpect" value="1"/>
+  	<parameter name="infantsExpect" value="1"/>
+      <classes>
+      <class name="globant.NeiderBarbosa.Ana.test.FlightReservationTest">
+        <methods>
+          <include name="origin"/>
+        </methods>
+      </class> <!-- globant.NeiderBarbosa.Ana.test.FlightReservationTest -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

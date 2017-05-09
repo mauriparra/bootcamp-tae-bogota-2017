@@ -30,11 +30,11 @@ public class LoginPage extends BasePage {
 	public void Login(String User , String Password){
 		super.SendText(Email, User);
 		super.SendText(PassWord, Password);
-		super.SendBottom(BotonLogin);		
+		super.SendButton(BotonLogin);		
 	}
 	
 	public UpdatePage SubmitPage(){
-		return PageFactory.initElements(driver, UpdatePage.class);
+		return PageFactory.initElements(Driver, UpdatePage.class);
 		
 	}
 	

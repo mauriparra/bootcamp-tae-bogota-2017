@@ -1,13 +1,17 @@
 package globant.NeiderBarbosa;
 
+import globant.NeiderBarbosa.Ana.Page.FlightReservationPage;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+	public static FlightReservationPage flightReservation;
+	
+	public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+		flightReservation.selectOrigin("tok");
     }
 }
