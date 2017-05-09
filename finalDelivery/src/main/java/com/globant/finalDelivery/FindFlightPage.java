@@ -23,7 +23,7 @@ public class FindFlightPage {
 	
 	public static final String[] AFE_OPTIONS = new String []{"Senior (65 years and older)","Adult (25 - 64 years)"};
 
-	 void changePassenger(String[] passengers){
+	 public void changePassenger(String[] passengers){
 		newPassengers.click();
 		WebElement passengersQuantityView = HomePageTest.driver.findElement(By.xpath("//label[@for='tnr__itp__"+passengers.length+"']"));
 		passengersQuantityView.click();
