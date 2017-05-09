@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SuiteEtihad" duration-ms="44852" started-at="2017-05-09T00:11:28Z" finished-at="2017-05-09T00:12:13Z">
+    <groups>
+    </groups>
+    <test name="EtihadTest" duration-ms="44852" started-at="2017-05-09T00:11:28Z" finished-at="2017-05-09T00:12:13Z">
+      <class name="com.globant.bootcampAutomation2.tests.TestsEtihad">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="setup" is-config="true" duration-ms="10290" started-at="2017-05-08T19:11:28Z" finished-at="2017-05-08T19:11:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="EtihadTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="EtihadTest" duration-ms="16352" started-at="2017-05-08T19:11:38Z" description="Test search of a flight" finished-at="2017-05-08T19:11:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[LCG]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[AUH]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[14/05/2017]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[22/08/2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[business]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EtihadTest -->
+        <test-method status="PASS" signature="closePage()[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="closePage" is-config="true" duration-ms="3432" started-at="2017-05-08T19:11:55Z" finished-at="2017-05-08T19:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closePage -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="setup" is-config="true" duration-ms="9199" started-at="2017-05-08T19:11:58Z" finished-at="2017-05-08T19:12:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="DateTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="DateTest" duration-ms="2314" started-at="2017-05-08T19:12:07Z" description="Test a past date" finished-at="2017-05-08T19:12:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[LCG]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[AUH]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[01/05/2017]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DateTest -->
+        <test-method status="PASS" signature="closePage()[pri:0, instance:com.globant.bootcampAutomation2.tests.TestsEtihad@5e5792a0]" name="closePage" is-config="true" duration-ms="3249" started-at="2017-05-08T19:12:10Z" finished-at="2017-05-08T19:12:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closePage -->
+      </class> <!-- com.globant.bootcampAutomation2.tests.TestsEtihad -->
+    </test> <!-- EtihadTest -->
+  </suite> <!-- SuiteEtihad -->
+</testng-results>
