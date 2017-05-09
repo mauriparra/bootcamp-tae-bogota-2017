@@ -1,7 +1,7 @@
-package com.globant.bootcampAutomation.com.globant.bootcampAutomation.test;
+package bootcampAutomation.test;
 
-import com.globant.bootcampAutomation.com.globant.bootcampAutomation.pages.CreateUserPage;
-import com.globant.bootcampAutomation.com.globant.bootcampAutomation.pages.ReturnCreateUserPage;
+import bootcampAutomation.pages.ReturnCreateUserPage;
+import bootcampAutomation.pages.CreateUserPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 public class suiteWebpageTest {
 
     private WebDriver driver;
-
 
     private static String pageUrl = "https://secure.alkomprar.com/customer/account/create/";
 

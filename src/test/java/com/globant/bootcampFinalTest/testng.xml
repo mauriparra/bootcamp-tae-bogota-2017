@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="southwestTest">
+    <test name="BasicTest">
+        <classes>
+            <class name="com.globant.bootcampFinalTest.test.southwestBookingTest" />
+        </classes>
+    </test>
+    <parameter name="depart" value="lga"></parameter>
+    <parameter name="arrival" value="fll"></parameter>
+    <!-- departDate and arrivalDate format MM/DD/YYYY -->
+    <parameter name="departDate" value="5/5/2017"></parameter>
+    <parameter name="arrivalDate" value="11/3/2017"></parameter>
+    <!-- type: one-way or by default round-trip -->
+    <parameter name="type" value="round"></parameter>
+    <!-- adults max 8 -->
+    <parameter name="adults" value="8"></parameter>
+    <!-- seniors max 8 -->
+    <parameter name="seniors" value="9"></parameter>
+</suite>

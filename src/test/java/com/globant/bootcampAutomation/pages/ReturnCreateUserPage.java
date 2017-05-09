@@ -1,4 +1,4 @@
-package com.globant.bootcampAutomation.com.globant.bootcampAutomation.pages;
+package bootcampAutomation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
