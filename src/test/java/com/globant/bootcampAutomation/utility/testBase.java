@@ -17,13 +17,13 @@ public abstract class testBase {
     @BeforeMethod(description = "This will run before each method and will take a browser from browserFactory")
     public void setUp() {
         Reporter.log("=====Browser session started=====", true);
-        driver = browserFactory.startBrowser("chrome", "https://www.amazon.com/");
+        driver = browserFactory.startBrowser("chrome", "https://www.latam.com/en_us/");
         Reporter.log("=====Application Started=====", true);
     }
 
-    @AfterMethod(description = "This will run after each method and will quit the driver regardless the result")
-    public void tearDown()  {
+      @AfterMethod(description = "This will run after each method and will quit the driver regardless the result")
+        public void tearDown()  {
         driver.quit();
         Reporter.log("=====Browser session ended",true);
-    }
+   }
 }

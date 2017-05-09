@@ -1,4 +1,4 @@
-package com.globant.bootcampAutomation;
+package com.globant.bootcampAutomation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,6 @@ public class basePage {
     }
 
     public void setElementText (WebElement element, String text){
-        element.clear();
         element.sendKeys(text);
     }
 }
