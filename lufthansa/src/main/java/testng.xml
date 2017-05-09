@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestLufthansa">
+
+	<test name="Booking Process happy path">
+		<classes>
+			<class name="com.globant.bootcampAutomation.lufthansa.HomePageTest" />
+		</classes>
+		<parameter name="bookingType" value="Road Trip" />
+		<parameter name="originCity" value="bogota" />
+		<parameter name="destinationCity" value="bog" />
+		<parameter name="outbondDate" value="23-05-2017" />
+		<parameter name="inbondDate" value="23-06-2017" />
+		<parameter name="adultPassenger" value="1 Adult" />
+		<parameter name="travelWithChildren" value="Yes" />
+		<parameter name="childrenPassenger" value="1 Boy" />
+		<parameter name="infantPassenger" value="1 Baby" />
+		<parameter name="cabinType" value="First" />		
+	</test>
+	<!--  
+	<test name="Booking Process">
+		<classes>
+			<class name="com.globant.bootcampAutomation.lufthansa.HomePageTest" />
+		</classes>
+		<parameter name="bookingType" value="Oneway" />
+		<parameter name="originCity" value="" />
+		<parameter name="destinationCity" value="bog" />
+		<parameter name="outbondDate" value="23-05-2017" />
+		<parameter name="inbondDate" value="23-06-2017" />
+		<parameter name="adultPassenger" value="1 Adult" />
+		<parameter name="travelWithChildren" value="Yes" />
+		<parameter name="childrenPassenger" value="1 Boy" />
+		<parameter name="infantPassenger" value="1 Baby" />
+		<parameter name="cabinType" value="First" />		
+	</test>-->
+</suite>

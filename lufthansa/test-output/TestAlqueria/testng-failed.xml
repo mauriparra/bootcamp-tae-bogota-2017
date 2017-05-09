@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestAlqueria]">
+  <test name="RegisterForm(failed)">
+    <parameter name="origen" value="par"/>
+    <parameter name="vuelta" value="no-check"/>
+    <classes>
+      <class name="com.globant.bootcampAutomation.lufthansa.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="validateBookingForm" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.globant.bootcampAutomation.lufthansa.HomePageTest -->
+    </classes>
+  </test> <!-- RegisterForm(failed) -->
+</suite> <!-- Failed suite [TestAlqueria] -->

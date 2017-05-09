@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestLufthansa]">
+  <test name="Booking Process happy path(failed)">
+    <parameter name="destinationCity" value="bog"/>
+    <parameter name="inbondDate" value="23-06-2017"/>
+    <parameter name="outbondDate" value="23-05-2017"/>
+    <parameter name="bookingType" value="Road Trip"/>
+    <parameter name="originCity" value="bogota"/>
+    <parameter name="infantPassenger" value="1 Baby"/>
+    <parameter name="travelWithChildren" value="Yes"/>
+    <parameter name="adultPassenger" value="1 Adult"/>
+    <parameter name="childrenPassenger" value="1 Boy"/>
+    <parameter name="cabinType" value="First"/>
+    <classes>
+      <class name="com.globant.bootcampAutomation.lufthansa.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="validateBookingForm"/>
+        </methods>
+      </class> <!-- com.globant.bootcampAutomation.lufthansa.HomePageTest -->
+    </classes>
+  </test> <!-- Booking Process happy path(failed) -->
+</suite> <!-- Failed suite [TestLufthansa] -->
