@@ -18,8 +18,8 @@ public class wordPressPost extends testBase {
 
         wordPressLogInPage logIn = PageFactory.initElements(driver,wordPressLogInPage.class);
 
-        logIn.setText_EmailLogin("rack2106@hotmail.com");
-        logIn.setText_PasswordLogin("mao1020754347");
+        logIn.setText_EmailLogin("xxxxx@hotmail.com");
+        logIn.setText_PasswordLogin("xxxxxxxx");
         logIn.clickRememberMeButton(false);
         wordPressHomePage homePage = logIn.clickLoginSubmitButton();
         wordPressPostPage postPage = homePage.clickWriteButton();
