@@ -14,7 +14,7 @@ public class amazonValidLogInTest extends amazonLogInTest {
     public void testLogIn() {
 
         //Inherited the method go to Log In from the abstract class amazon log in test
-        super.goToLogIn("rack2106@hotmail.com","mao1020754347",false);
+        super.goToLogIn("xxxxxx@hotmail.com","xxxxxxxxx",false);
 
         //If the log in is successful, the application should go afterwards to home page
         Assert.assertTrue(super.validation());
